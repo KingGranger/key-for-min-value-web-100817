@@ -3,7 +3,13 @@
 
 def key_for_min_value(name_hash)
   numbers = name_hash.collect {|name, number| number}
+  lowest_key = ""
   lowest_num = numbers[0]
-  numbers.each{|num| lowest_num = num if num < lowest_num}
-  lowest_num
+  name_hash.each do|name, num| 
+    if lowest_num > num
+      lowest_key = name
+      lowest_num = num 
+    end
+  end
+  lowest_key
 end
