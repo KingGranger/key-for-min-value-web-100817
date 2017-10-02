@@ -9,6 +9,8 @@ def key_for_min_value(name_hash)
     if num <= lowest_num
       lowest_key = name
       lowest_num = num
+    elsif name_hash.size == 0
+      return nil
     end
   end
   lowest_key
